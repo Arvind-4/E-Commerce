@@ -1,0 +1,29 @@
+{% load render_vite_bundle %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/tailwind.min.css' %}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>E Commerce</title>
+</head>
+
+<body>
+
+    {{is_authenticated|json_script:'is_authenticated'}}
+    <div id="root"></div>
+    {% render_vite_bundle %}
+
+    {% if 'accounts' in request.get_full_path %}
+    {% block content %} {% endblock content %}
+    {% endif %}
+
+</body>
+
+</html>

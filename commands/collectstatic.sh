@@ -1,0 +1,1 @@
+rm -rf static && python manage.py collectstatic -i css-dev -i admin -i rest_framework --no-input

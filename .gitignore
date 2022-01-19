@@ -1,0 +1,12 @@
+node_modules/
+
+Lib/
+Include/
+Scripts/
+
+__pycache__/
+
+dist/
+
+static/
+static-dev/css/

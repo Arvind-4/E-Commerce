@@ -1,0 +1,29 @@
+{
+  "name": "solidjs-vite-tailwindcss-ecommerce",
+  "version": "1.0.0",
+  "description": "Ecommerce Frontend for Django Backend",
+  "author": {
+    "name": "Arvind",
+    "email": "lordarvindthegamer@gmail.com",
+    "url": "https://arvind11.tk"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "build:production": "vite build && rm -rf dist/index.html"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.13",
+    "typescript": "^4.5.4",
+    "vite": "^2.7.10",
+    "vite-plugin-solid": "^2.2.1"
+  },
+  "dependencies": {
+    "solid-app-router": "^0.2.1",
+    "solid-js": "^1.3.2"
+  }
+}
