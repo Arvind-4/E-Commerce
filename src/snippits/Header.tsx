@@ -1,13 +1,10 @@
 import { Component } from 'solid-js'
 import { createSignal, Show, Switch, Match, For } from 'solid-js'
 
-import { Link } from 'solid-app-router'
-
 import { CartInterface } from '../interface/product'
 import { cartproducts } from '../store/cart'
 import { deleteProduct } from '../store/cart'
-import { is_authenticated } from '../store/auth'
-import { logoutUser } from '../store/auth'
+import { Navlinks } from './Navlinks'
 
 const Header: Component = () => {
 
@@ -124,97 +121,14 @@ const Header: Component = () => {
           </div>
           <nav class='sm:flex sm:justify-center sm:items-center mt-4'>
             <div class='hidden lg:flex flex-row md:flex flex-row'>
-              <a
-                class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                href='/'
-              >
-                Home
-              </a>
-              <a
-                class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                href='/products/'
-              >
-                Products
-              </a>
-              <a
-                class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                href='/categories/'
-              >
-                Categories
-              </a>
-              <a
-                class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                href='#'
-              >
-                Contact
-              </a>
-              <a
-                class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                href='#'
-              >
-                About
-              </a>
-              <Switch fallback={<div>Not Found</div>}>
-                <Match when={is_authenticated === 'true'}>
-                  <a
-                    class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                    onClick={() => logoutUser()}
-                  >
-                    Sign Out <i class="fas fa-sign-out-alt"></i>
-                  </a>
-
-                </Match>
-                <Match when={is_authenticated !== 'true'}>
-                  <a
-                    class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                    href='/accounts/sign-in/'
-                  >
-                    Sign In <i class="fas fa-sign-in-alt"></i>
-                  </a>
-                  <a
-                    class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                    href='/accounts/sign-up/'
-                  >
-                    Sign Up <i class="fas fa-user-plus"></i>
-                  </a>
-                </Match>
-              </Switch>
+              <Navlinks />
             </div>
           </nav>
           <Switch fallback={''}>
             <Match when={isNavOpen()}>
               <nav class='sm:flex sm:justify-center sm:items-center mt-4'>
                 <div class='flex flex-col sm:flex-row'>
-                  <a
-                    class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                    href='#'
-                  >
-                    Home
-                  </a>
-                  <a
-                    class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                    href='#'
-                  >
-                    Shop
-                  </a>
-                  <a
-                    class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                    href='#'
-                  >
-                    Categories
-                  </a>
-                  <a
-                    class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                    href='#'
-                  >
-                    Contact
-                  </a>
-                  <a
-                    class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-                    href='#'
-                  >
-                    About
-                  </a>
+                  <Navlinks />
                 </div>
               </nav>
             </Match>
@@ -223,7 +137,6 @@ const Header: Component = () => {
             <span class='absolute inset-y-0 left-0 pl-3 flex items-center'>
               <i class="fas fa-search"></i>
             </span>
-
             <input
               class='w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline'
               type='text'
