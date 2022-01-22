@@ -1,1 +1,1 @@
-rm -rf static/ dist/ 
+rm -rf static/ dist/ static-dev/css
