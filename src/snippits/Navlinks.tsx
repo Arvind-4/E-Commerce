@@ -26,13 +26,13 @@ export const Navlinks: Component = () => {
     </a>
     <a
       class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-      href='#'
+      href='/contact-us/'
     >
       Contact
     </a>
     <a
       class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-      href='#'
+      href='/about-us/'
     >
       About
     </a>
@@ -40,7 +40,7 @@ export const Navlinks: Component = () => {
       <Match when={is_authenticated === 'true'}>
         <a
           class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
-          onClick={() => logoutUser()}
+          onclick={() => logoutUser()}
         >
           Sign Out <i class="fas fa-sign-out-alt"></i>
         </a>
