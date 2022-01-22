@@ -16,10 +16,10 @@ const Categorypage: Component = () => {
                 <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 gap-4">
                   <div class="col-span-2 sm:col-span-1 xl:col-span-1">
                     {/* <img
-                  alt="..."
-                  src="https://source.unsplash.com/"
-                  class="h-24 w-24 rounded  mx-auto"
-                /> */}
+                      alt={category.slug}
+                      src="https://media.istockphoto.com/photos/vitamin-d-illuminated-by-the-rays-of-the-sun-on-grass-sunlight-is-an-picture-id1301094916?b=1&k=20&m=1301094916&s=170667a&w=0&h=QeBE-rB8f2yQkcUxvswEGK_RRpmpqBEBB1iFoFpJeYE="
+                      class="h-24 w-24 rounded  mx-auto"
+                    /> */}
                   </div>
                   <div class="col-span-2 sm:col-span-4 xl:col-span-4">
                     <Link href={`/category/${category.slug}/`} >

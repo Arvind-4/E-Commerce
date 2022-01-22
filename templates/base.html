@@ -15,14 +15,16 @@
 </head>
 
 <body>
+    <div class='min-h-screen'>
+        {{is_authenticated|json_script:'is_authenticated'}}
+        <div id="root"></div>
+        {% render_vite_bundle %}
 
-    {{is_authenticated|json_script:'is_authenticated'}}
-    <div id="root"></div>
-    {% render_vite_bundle %}
-
-    {% if 'accounts' in request.get_full_path %}
-    {% block content %} {% endblock content %}
-    {% endif %}
+        {% if 'accounts' in request.get_full_path %}
+        {% block content %} {% endblock content %}
+        {% endif %}
+    </div>
+    {% include 'snippits/footer.html' %}
 
 </body>
 

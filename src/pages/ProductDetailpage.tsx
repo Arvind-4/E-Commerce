@@ -1,24 +1,29 @@
 import type { Component } from 'solid-js'
-import { useParams } from 'solid-app-router'
 import { createMemo } from 'solid-js'
-import { Show } from 'solid-js'
+
+import { useParams, useNavigate } from 'solid-app-router'
 
 import { products } from '../store/products'
 
 const ProductDetailpage: Component = () => {
-  const params = useParams()
-  const product: any = createMemo(() =>
-    products().find((p) => p.id === params.id)
+  const navigate = useNavigate()
+  const { id } = useParams()
+  const product = createMemo(() =>
+    products().filter((p) => p.id === id)[0]
   )
-  console.log('The product', product())
-  return (
-    <div>
-      <Show when={product()} fallback={<div>Loading...</div>}>
+
+  if (product() !== undefined) {
+
+    return (
+      <div>
         <div>{product().title}</div>
-        <div>{product().price}</div>
-      </Show>
-    </div>
-  )
+      </div>
+    )
+  } else {
+    navigate('/', {
+      replace: true
+    })
+  }
 }
 
 export default ProductDetailpage

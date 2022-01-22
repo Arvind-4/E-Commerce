@@ -1,7 +1,7 @@
 import { Component } from 'solid-js'
 import { createSignal, Show, Switch, Match, For } from 'solid-js'
 
-import { CartInterface } from '../interface/product'
+import { CartInterface, ProductInterface } from '../interface/product'
 import { cartproducts } from '../store/cart'
 import { deleteProduct } from '../store/cart'
 import { Navlinks } from './Navlinks'
@@ -61,7 +61,7 @@ const Header: Component = () => {
                     {(cart) => (
                       <div class='shadow-xl w-64'>
                         <div>
-                          {cart.products.map((cp) => (
+                          {cart.products.map((cp: ProductInterface) => (
                             <div
                               class='p-2 flex bg-white hover:bg-gray-100 cursor-pointer border-b border-gray-100'
                               style=''
@@ -102,7 +102,6 @@ const Header: Component = () => {
                   </For>
                 </div>
               </Show>
-
               <div class='flex sm:hidden'>
                 <button onClick={() => setNavOpen(!isNavOpen())}
                   type='button'
