@@ -5,10 +5,6 @@ import { base_url } from "../constants"
 import { CartInterface, ProductInterface } from "../interface/product"
 import { is_authenticated } from "./auth"
 
-// const async fetchUserCart  = () => {
-
-// }
-
 export async function fetchUserCart() {
     if (is_authenticated === 'true') {
         const res = await fetch(`${base_url}/api/cart/`)
@@ -18,6 +14,7 @@ export async function fetchUserCart() {
         return []
     }
 }
+
 
 export const [cartproducts, { refetch }] = createResource<CartInterface[]>(
     () => fetchUserCart(),

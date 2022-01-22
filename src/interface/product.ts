@@ -3,7 +3,7 @@ export interface ProductInterface {
     title: string;
     slug: string;
     price: number;
-    category?: CategoryInterface[]
+    category?: CategoryInterface
     description: string;
     instock: boolean;
     offer_badge: boolean;
@@ -23,7 +23,7 @@ export interface CategoryInterface {
 
 export interface CartInterface {
     user: string;
-    products: ProductInterface[]
+    products: ProductInterface
     subtotal: number;
     total: number;
     updated: string;
