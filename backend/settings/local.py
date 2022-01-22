@@ -1,12 +1,12 @@
-from .base import *
-
 import os
+
+from .base import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'hf6*cde(@0vf-t!7)jvt6swwi69%@&ma0a4_!oiv4$lx_ri0y%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -58,6 +58,4 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 LOGIN_URL = 'sign-in'
 
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
