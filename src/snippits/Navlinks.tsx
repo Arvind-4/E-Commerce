@@ -40,6 +40,12 @@ export const Navlinks: Component = () => {
       <Match when={is_authenticated === 'true'}>
         <a
           class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
+          href="/accounts/"
+        >
+          Accounts <i class="fas fa-sign-out-alt"></i>
+        </a>
+        <a
+          class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
           onclick={() => logoutUser()}
         >
           Sign Out <i class="fas fa-sign-out-alt"></i>
