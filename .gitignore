@@ -10,3 +10,6 @@ dist/
 
 static/
 static-dev/css/
+
+*.env
+env/
