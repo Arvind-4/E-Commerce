@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% include 'snippits/form-errors.html' %}
+
 <div class="min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
   <div class="w-full sm:max-w-md p-5 mx-auto">
     <h2 class="mb-12 text-center text-5xl font-extrabold">Welcome.</h2>
@@ -10,14 +12,6 @@
       {% for field in form %}
       <div class="mb-4">
         <label class="block mb-1" for="{{field.label}}">{{field.label}}</label>
-        {% if field.errors %}
-        {% for err in field.errors %}
-        <p class='text-red-600'><strong>{{ err }}</strong></p>
-        {% endfor %}
-        {% for err in form.non_field_errors %}
-        <p class='text-red-600'><strong>{{ err }}</strong></p>
-        {% endfor %}
-        {% endif %}
         {{field}}
         {% if field.help_text %}
         <strong>
@@ -28,11 +22,11 @@
       {% endfor %}
       <div class="mt-6 flex items-center justify-between">
         <div class="flex items-center">
-          <input id="remember_me" type="checkbox"
+          <input id="remember_me" type="checkbox" name='remember_me'
             class="border border-gray-300 text-red-600 shadow-sm focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50" />
-          <label for="remember_me" class="ml-2 block text-sm leading-5 text-gray-900"> Remember me </label>
+          <label for="remember_me" class="ml-2 block text-sm leading-5 text-gray-900"> Remember me for 7 Days</label>
         </div>
-        <a href="" class="text-sm"> Forgot your password? </a>
+        <a href="{% url 'password_reset' %}" class="text-sm"> Forgot your password? </a>
       </div>
       <div class="mt-6">
         <button
