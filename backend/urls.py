@@ -21,6 +21,8 @@ from django.conf.urls.static import static
 
 from django.shortcuts import render
 
+from pages.views import error_404
+
 def render_main_template(request, *args, **kwargs):
     allow_block_content = ['accounts']
     context = {
@@ -36,7 +38,10 @@ urlpatterns = [
 
     path('accounts/', include('accounts.urls')),
 
+    path('error/', error_404, name='404'),
+
     re_path(r'^.*', render_main_template, name='home')
 ]
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
