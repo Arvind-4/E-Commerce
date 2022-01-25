@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'category',
     'carts',
     'accounts',
+    'pages',
     'vite_bundle',
 ]
 
