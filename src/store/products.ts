@@ -9,3 +9,13 @@ export const [products] = createResource<ProductInterface[]>(
     initialValue: [],
   }
 )
+
+export async function fetchSingleProduct(id: string) {
+  const response = await fetch(`${base_url}/api/products/${id}/detail-view/`)
+  try {
+    const data = await response.json()
+    return data
+  } catch(e) {
+    return window.location.href = '/error/'
+  }
+}

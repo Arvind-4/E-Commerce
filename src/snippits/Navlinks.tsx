@@ -1,6 +1,8 @@
 import type { Component } from "solid-js";
 import { Switch, Match } from "solid-js";
 
+// import { a } from "solid-app-router";
+
 import { is_authenticated } from '../store/auth'
 import { logoutUser } from '../store/auth'
 
@@ -42,7 +44,7 @@ export const Navlinks: Component = () => {
           class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
           href="/accounts/"
         >
-          Accounts <i class="fas fa-sign-out-alt"></i>
+          Account
         </a>
         <a
           class='mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0'
