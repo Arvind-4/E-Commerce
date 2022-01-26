@@ -15,6 +15,31 @@ export async function fetchUserCart() {
     }
 }
 
+export function SuccessAlert(title: string) {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  Toast.fire({
+    icon: 'success',
+    title: `${title} Added to Your Cart`
+  })  
+}
+
+export function DeleteAlert(title: string) {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: `${title} has been Removed from your Cart!`,
+  })
+}
 
 export const [cartproducts, { refetch }] = createResource<CartInterface[]>(
     () => fetchUserCart(),
@@ -53,15 +78,14 @@ export async function deleteProduct(product: ProductInterface) {
     if (is_authenticated === 'true') {
         const value = cart.removeProduct({ product })
         if (value) {
-            alert(`${product.title} has been removed from Cart!`)
+            DeleteAlert(product.title)
             dataRefetch()
         } else {
             alert(`Failed`)
         }
-
     } else {
         var url = window.location.pathname
-        var login_redirect = `/accounts/sign-in/?next=${url}`
+        var login_redirect = `/accounts/sign-in/?next=${url}/`
         window.location.href = url.replace(url, login_redirect)
     }
 }
@@ -70,14 +94,14 @@ export async function navigateUser(product: ProductInterface) {
     if (is_authenticated === 'true') {
         const value = cart.addProduct({ product })
         if (value) {
-            alert(`${product.title} has been added to the Cart!`)
+            SuccessAlert(product.title)
             dataRefetch()
         } else {
             alert(`Failed`)
         }
     } else {
         var url = window.location.pathname
-        var login_redirect = `/accounts/sign-in/?next=${url}`
+        var login_redirect = `/accounts/sign-in/?next=${url}/`
         window.location.href = url.replace(url, login_redirect)
     }
 
