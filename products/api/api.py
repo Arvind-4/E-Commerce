@@ -56,11 +56,11 @@ class ProductListView(ListAPIView):
 @permission_classes((AllowAny, ))
 class ProductDetail(RetrieveAPIView):
     serializer_class = ProductSerializer
-    lookup_field = ['slug', 'id']
+    lookup_field = 'id'
     def get_object(self):
-        slug = self.kwargs.get('slug')
+        # slug = self.kwargs.get('slug')
         id_ = self.kwargs.get('id')
-        product_qs = Product.objects.filter(slug=slug, id=id_)
+        product_qs = Product.objects.filter(id=id_)
         if not product_qs.exists():
             raise Http404
         return product_qs.first()

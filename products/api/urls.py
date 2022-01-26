@@ -6,5 +6,5 @@ from .api import (
 )
 urlpatterns = [
     path('list-view/', ProductListView.as_view()),
-    path('<uuid:id>/detail-view/<str:slug>/', ProductDetail.as_view()),
+    path('<uuid:id>/detail-view/', ProductDetail.as_view()),
 ]
