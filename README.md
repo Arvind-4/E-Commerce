@@ -1,5 +1,7 @@
 # E-commerce
 
+A Simple E-commerce build on Django 4, Solid js, and TailWind! .
+
 ## Stack
 
 - [Solid Js](https://www.solidjs.com/) - A Reactive JavaScript Library.
