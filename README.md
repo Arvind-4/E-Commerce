@@ -12,6 +12,8 @@ A Simple E-commerce build on Django 4, Solid js, and TailWind! .
 
 ### 
 
+NOTE: Still Under Progress ...
+
 ## Project structure
 
 ```
