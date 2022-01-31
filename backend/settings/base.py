@@ -31,12 +31,14 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    'django_countries',
 
     'products',
     'category',
     'carts',
     'accounts',
     'pages',
+    'checkout',
     'vite_bundle',
 ]
 
