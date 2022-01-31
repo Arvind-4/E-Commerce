@@ -8,8 +8,6 @@
     "url": "https://arvind11.tk"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
     "build:watch": "vite build --watch",
     "build:production": "vite build && rm -rf dist/index.html"
   },

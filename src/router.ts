@@ -3,6 +3,8 @@ import ProductListpage from './pages/ProductListpage'
 import Categorypage from './pages/Categorypage'
 import Contactpage from './pages/Contactpage'
 import Aboutpage from './pages/Aboutpage'
+import Accountpage from './pages/Accountspage'
+import CheckOutpage from './pages/CheckOutpage'
 
 export const routes = [
   {
@@ -24,5 +26,9 @@ export const routes = [
   {
     path: '/about-us/',
     component: Aboutpage,
-  }
+  },
+  {
+    path: '/accounts/',
+    component: Accountpage,
+  },
 ]
