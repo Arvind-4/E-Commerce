@@ -90,12 +90,13 @@ const Header: Component = () => {
                         </div>
                         <p class='text-center py-1'>The Sub-Total is {cart.subtotal}</p>
                         <div class='p-4 justify-center flex'>
-
-                          <button
-                            class='text-base  undefined  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-teal-700 hover:text-teal-100 bg-teal-100 text-teal-700 border duration-200 ease-in-out border-teal-600 transition'
-                          >
-                            Checkout ${cart.total}
-                          </button>
+                          <a href='/checkout/'>
+                            <button
+                              class='text-base  undefined  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-teal-700 hover:text-teal-100 bg-teal-100 text-teal-700 border duration-200 ease-in-out border-teal-600 transition'
+                            >
+                              Checkout ${cart.total}
+                            </button>
+                          </a>
                         </div>
                       </div>
                     )}
