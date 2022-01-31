@@ -1,6 +1,7 @@
 asgiref==3.4.1
 Django==3.2.9
 django-cors-headers==3.11.0
+django-countries==7.2.1
 djangorestframework==3.12.4
 Pillow==9.0.0
 python-dotenv==0.19.2
