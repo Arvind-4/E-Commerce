@@ -19,16 +19,13 @@ from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.views.generic import TemplateView
+
 from django.shortcuts import redirect, render
 
 from pages.views import error_404
 
-def render_main_template(request, *args, **kwargs):
-    allow_block_content = ['accounts']
-    context = {
-        'is_authenticated': request.user.is_authenticated
-    }
-    return render(request, 'base.html', context)
+from checkout.views import checkout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,10 +34,11 @@ urlpatterns = [
     path('api/cart/', include('carts.api.urls')),
 
     path('accounts/', include('accounts.urls')),
+    path('checkout/', checkout_view, name='checkout'),
 
     path('error/', error_404, name='404'),
 
-    re_path(r'^.*', render_main_template, name='home')
+    re_path(r'^.*', TemplateView.as_view(template_name='base.html'), name='home')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
