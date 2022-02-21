@@ -19,15 +19,13 @@ NOTE: Still Under Progress ...
 ```
 $PROJECT_ROOT
 │  
-├── backend  # Django file
+├── web  # Django file
 │  
-├── src  # Solid js App
+├── frontend  # Solid js App
 │   
-├── templates # Django Templates
+├── web/templates # Django Templates
 │   
-├── vite_bundle # Django template tag to render Frontend
-│   
-├── accounts, carts, category, products, pages 
+├── web/ accounts, carts, category, products, pages 
 |	# Django Apps
 │   
 ├── commands # shell commands.
@@ -59,14 +57,14 @@ source Scripts/activate
 - Install Dependencies
 
 ```
-pip install -r requirements/requirements.txt
+pip install -r requirements.txt
 ```
 
 - Make Migrations
 
 ```
-python manage.py makemigrations
-python manage.py migrate
+python web/manage.py makemigrations
+python web/manage.py migrate
 ```
 
 ####  For Frontend
