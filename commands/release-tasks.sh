@@ -1,4 +1,4 @@
-python manage.py makemigration --noinput
-python manage.py migrate --noinput
+python web/manage.py makemigration --noinput
+python web/manage.py migrate --noinput
 
-python manage.py collectstatic -i rest_framework -i flags --no-input
+python web/manage.py collectstatic -i rest_framework -i flags --no-input
