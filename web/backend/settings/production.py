@@ -21,7 +21,7 @@ ADMIN_URL = str(os.environ.get('ADMIN_URL'))
 DEBUG = int(os.environ.get('DEBUG', 0))
 ALLOWED_HOSTS = [str(os.environ.get('ALLOWED_HOST'))]
 CORS_ALLOWED_ORIGINS = [
-    str(os.environ.get('ALLOWED_HOST'))
+    str(os.environ.get('ALLOWED_HOST')),
 ]
 
 # Authentication Settings
