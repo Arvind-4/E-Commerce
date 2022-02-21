@@ -19,7 +19,7 @@ if not 'HEROKU' in os.environ:
 SECRET_KEY = str(os.environ.get('SECRET_KEY'))
 ADMIN_URL = str(os.environ.get('ADMIN_URL'))
 DEBUG = int(os.environ.get('DEBUG', 0))
-ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'), 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [str(os.environ.get('ALLOWED_HOST'))]
 CORS_ALLOWED_ORIGINS = [
     str(os.environ.get('ALLOWED_HOST'))
 ]
