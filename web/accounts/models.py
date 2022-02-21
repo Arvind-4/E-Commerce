@@ -20,7 +20,6 @@ class MyAccountManager(BaseUserManager):
         user = self.create_user(
                 email=self.normalize_email(email),
                 password=password,
-                username='None',
             )
         user.is_admin = True
         user.is_staff=True
