@@ -6,6 +6,11 @@ Scripts/
 
 __pycache__/
 
+lib
+lib64
+share
+bin
+
 dist/
 
 static/
