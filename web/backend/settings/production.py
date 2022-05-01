@@ -77,11 +77,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Security Settings
 
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_SSL_REDIRECT = True
-# SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 # Database Settings
 
@@ -107,7 +107,6 @@ DB_IS_AVAILABLE = all([
 ])
 
 if DB_IS_AVAILABLE:
-    print(DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST, DATABASE_PORT, CERTIFICATE_FILE_PATH)
     DATABASES = {
         'default': {
             'ENGINE': 'django_cockroachdb',
