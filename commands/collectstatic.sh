@@ -1,1 +1,1 @@
-rm -rf web/static && python web/manage.py collectstatic -i admin -i rest_framework -i flags --no-input
+rm -rf web/static && python web/manage.py collectstatic -i rest_framework -i flags --no-input
