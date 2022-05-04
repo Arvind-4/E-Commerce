@@ -6,12 +6,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
-  <link rel="stylesheet" href="{% static 'css/tailwind.min.css' %}">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <title>E Commerce</title>
+
+  {% if debug %}
+  <script type="module" src="http://localhost:3000/index.tsx"></script>
+  <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+
+  {% else %}
+
+  {% include 'react/js.html' %}
+  {% include 'react/css.html' %}
+  <link rel="stylesheet" href="{% static 'css/tailwind.min.css' %}">
+
+  {% endif %}
 </head>
 
 <body>
@@ -22,11 +33,7 @@
   </div>
   <div class='min-h-screen'>
     {{request.user.is_authenticated|json_script:'is_authenticated'}}
-    <div id="root"></div>
-
-    {% include 'react/js.html' %}
-    {% include 'react/css.html' %}
-    
+    <div id="root"></div>    
 
     {% if 'accounts' in request.get_full_path or 'checkout' in request.get_full_path %}
     {% block content %} {% endblock content %}
