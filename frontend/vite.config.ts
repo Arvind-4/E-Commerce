@@ -9,6 +9,6 @@ export default defineConfig({
     manifest: true,
     polyfillDynamicImport: false,
     minify: true,
-    outDir: '../../web/static-dev/js' 
+    outDir: '../../react-frontend' 
   },
 });
