@@ -1,0 +1,97 @@
+[
+{
+  "model": "products.product",
+  "pk": "07a8af52-a490-4ee6-a8ef-9021c8669876",
+  "fields": {
+    "title": "Samsung S21-Ultra Black",
+    "slug": "samsung-s21-ultra-black",
+    "price": 1999.0,
+    "category": 1,
+    "description": "Own the Galaxy S21 FE 5G now at ₹ 49999. Incl. of ₹5000 cashback on select bank cards. Also get an additional ₹2000 off with 20K advantage program on Samsung Shop App. CPU Speed 2.9GHz. 12MP Ultra Wide Camera. 32MP Selfie Camera. Dynamic AMOLED 2X.",
+    "instock": true,
+    "offer_badge": false,
+    "popular_items": false,
+    "new_arrivals": false,
+    "width_field": 400,
+    "height_field": 400,
+    "image": "",
+    "image_url": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+  }
+},
+{
+  "model": "products.product",
+  "pk": "7d7a6b61-2a96-4d2e-8178-fa921c2ae93b",
+  "fields": {
+    "title": "Hp envy x360",
+    "slug": "hp-envy-x360",
+    "price": 1500.0,
+    "category": 2,
+    "description": "Buy Laptops @ Ecommerce. Gaming laptops starting at 1500$. Up to 44% off. 2 in 1 Laptops, Gaming Laptops, Business Laptops, & more. Services: Windows Laptops, Gaming Laptops, 2-In-1 Laptops, Ultra Thin Laptops, Thin & Light Laptops.",
+    "instock": true,
+    "offer_badge": false,
+    "popular_items": false,
+    "new_arrivals": false,
+    "width_field": 400,
+    "height_field": 400,
+    "image": "",
+    "image_url": "https://images.unsplash.com/photo-1583223675798-3dce4ddf071a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHAlMjBlbnZ5JTIweDM2MHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+  }
+},
+{
+  "model": "products.product",
+  "pk": "ccfbe872-5fa5-4e1b-b793-4c749d0f6f69",
+  "fields": {
+    "title": "I Mac 24 inch",
+    "slug": "i-mac-24-inch",
+    "price": 2400.0,
+    "category": 2,
+    "description": "iMac — beautiful, intuitive all-in-one desktops with incredible processors, a Retina display, and the world's most advanced desktop operating system.",
+    "instock": true,
+    "offer_badge": false,
+    "popular_items": false,
+    "new_arrivals": false,
+    "width_field": 400,
+    "height_field": 400,
+    "image": "",
+    "image_url": "https://images.unsplash.com/photo-1515248137880-45e105b710e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  }
+},
+{
+  "model": "products.product",
+  "pk": "ea91ab1c-6bb8-4a55-904b-083920e0aed7",
+  "fields": {
+    "title": "Poco F3",
+    "slug": "poco-f3",
+    "price": 500.0,
+    "category": 1,
+    "description": "Experience realistic content with Turbo AMOLED 10-Bit Display & 480Hz Touch Sampling Rate. Equipped with industry's 1st miniaturized Maglev triggers and tactical RGB glow lights. COD Available. Vast Service Networks. 100% Secure Payments. Hassle Free Replacement.",
+    "instock": true,
+    "offer_badge": false,
+    "popular_items": false,
+    "new_arrivals": false,
+    "width_field": 400,
+    "height_field": 400,
+    "image": "",
+    "image_url": "https://images.unsplash.com/photo-1615215271533-eab8c3d9cb34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8eGlvYW1pfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  }
+},
+{
+  "model": "products.product",
+  "pk": "fa820fb5-17f6-443b-8bdf-2a737ff2f14c",
+  "fields": {
+    "title": "I phone",
+    "slug": "i-phone",
+    "price": 1500.0,
+    "category": 1,
+    "description": "The new iPhone 13 Pro and iPhone 13. Buy now. Get No Cost EMI for 12 months with qualifying Credit Cards. Water resistant. Retina display. Wide camera. Privacy built in. Services: Free no-contact delivery, Chat with a Specialist .",
+    "instock": true,
+    "offer_badge": false,
+    "popular_items": false,
+    "new_arrivals": false,
+    "width_field": 400,
+    "height_field": 400,
+    "image": "",
+    "image_url": "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aXBob25lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  }
+}
+]
