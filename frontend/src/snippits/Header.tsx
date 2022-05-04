@@ -4,12 +4,14 @@ import { createSignal, Show, Switch, Match, For } from 'solid-js'
 import { CartInterface, ProductInterface } from '../interface/product'
 import { cartproducts } from '../store/cart'
 import { deleteProduct } from '../store/cart'
+import { SearchBox } from './SearchBox'
 import { Navlinks } from './Navlinks'
 
 const Header: Component = () => {
 
   const [isCartOpen, setisCartOpen] = createSignal(false)
   const [isNavOpen, setNavOpen] = createSignal(false)
+
   return (
     <>
       <header>
@@ -137,16 +139,7 @@ const Header: Component = () => {
               </nav>
             </Match>
           </Switch>
-          <div class='relative mt-6 max-w-lg mx-auto'>
-            <span class='absolute inset-y-0 left-0 pl-3 flex items-center'>
-              <i class="fas fa-search"></i>
-            </span>
-            <input
-              class='w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline'
-              type='text'
-              placeholder='Search'
-            />
-          </div>
+          <SearchBox />
         </div>
       </header>
     </>
