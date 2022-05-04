@@ -14,36 +14,49 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, re_path
-
+from django.urls import (
+    path, 
+    include, 
+    re_path,
+)
 from django.conf import settings
 from django.conf.urls.static import static
-
 from django.views.generic import TemplateView
 
-from django.shortcuts import redirect, render
 
 from pages.views import error_404
-
 from checkout.views import (
     checkout_view, 
     checkout_success_view,
 )
 
-urlpatterns = [
+djangoUrlPatterns = [
     path('admin/', admin.site.urls),
+]
+
+apiUrlPatterns = [
     path('api/products/', include('products.api.urls')),
     path('api/category/', include('category.api.urls')),
     path('api/cart/', include('carts.api.urls')),
+    path('api/search/', include('search.urls')),
+]
 
+defaultUrlPatterns = [
     path('accounts/', include('accounts.urls')),
     path('checkout/', checkout_view, name='checkout'),
     path('checkout-success/', checkout_success_view, name='checkout-success'),
 
     path('error/', error_404, name='404'),
+]
 
+reactUrlPatterns = [
     re_path(r'^.*', TemplateView.as_view(template_name='base.html'), name='home')
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+localUrlPatterns = []
+
+if settings.DEBUG:
+    localUrlPatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    localUrlPatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns = djangoUrlPatterns + apiUrlPatterns + defaultUrlPatterns + reactUrlPatterns + localUrlPatterns
