@@ -10,7 +10,7 @@ load_dotenv()
 SECRET_KEY = 'hf6*cde(@0vf-t!7)jvt6swwi69%@&ma0a4_!oiv4$lx_ri0y%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 1
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -64,3 +64,15 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+ALGOLIA = {
+    'APPLICATION_ID': '****',
+    'API_KEY': '****'
+}
+
+INTERNAL_IPS = (
+    '127.0.0.1',
+    '192.168.1.23',
+    'localhost:3000',
+)

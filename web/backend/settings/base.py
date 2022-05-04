@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'django_countries',
+    'algoliasearch_django',
 
     'products',
     'category',
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'pages',
     'checkout',
+    'search',
 ]
 
 MIDDLEWARE = [

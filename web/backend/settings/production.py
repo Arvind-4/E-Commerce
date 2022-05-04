@@ -83,6 +83,16 @@ CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
+# Algolia Settings
+
+ALGOLIA_APPLICATION_ID = str(os.environ.get('ALGOLIA_APPLICATION_ID'))
+ALGOLIA_API_KEY = str(os.environ.get('ALGOLIA_API_KEY'))
+
+ALGOLIA = {
+    'APPLICATION_ID': ALGOLIA_APPLICATION_ID,
+    'API_KEY': ALGOLIA_API_KEY
+}
+
 # Database Settings
 
 DATABASE_NAME = str(os.environ.get('DATABASE_NAME'))
