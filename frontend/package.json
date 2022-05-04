@@ -8,29 +8,39 @@
     "url": "https://arvind11.tk"
   },
   "scripts": {
-    "watch:js": "",
-    
-    "build:js": "rm -rf ../web/static-dev/js/*.js && rm -rf ../web/static-dev/css/index.min.css && vite build && cd ../web/static-dev/js && rm -rf *.html *.json && mv assets/index.*.js index.min.js && mv assets/vendor.*.js ./ && mv assets/index.*.css ../css/index.min.css && rm -rf assets",
-
-    "watch:css": "rm -rf ../web/static-dev/js/tailwind.min.css && tailwind build -i style.css -o ../web/static-dev/js/tailwind.min.css --watch --minify",
-
-    "build:css": "rm -rf ../web/static-dev/js/tailwind.min.css && NODE_ENV=production postcss ./src/index.css -o ../web/static-dev/css/tailwind.min.css",
-
-    "production": "yarn build:css && yarn build:js"
+    "dev": "vite",
+    "watch": "concurrently \"npm run watch:tailwind\" \"npm run dev\"",
+    "build:solid": "NODE_ENV=production vite build",
+    "build:tailwind": "NODE_ENV=production postcss ./src/index.css -o ../web/static-dev/css/tailwind.min.css --minify",
+    "watch:tailwind": "tailwind build -i ./src/index.css -o ../web/static-dev/css/tailwind.css --watch",
+    "make-dirs": "mkdir -p ../web/static-dev/css ../web/static-dev/js ",
+    "remove-cache:pre": "rm -rf ../web/static-dev/js/vendor.*.js ../web/static-dev/js/index.min.js ../web/static-dev/css/index.min.css ../web/static-dev/css/tailwind.min.css ../web/static-dev/css/tailwind.css",
+    "remove-cache:post": "rm -rf ../react-frontend",
+    "rename-js": "renamer --regex --find 'index\\.[^\\.]+\\.js' --replace 'index.min.js' ../react-frontend/assets/*.js",
+    "rename-css": "renamer --regex --find 'index\\.[^\\.]+\\.css' --replace 'index.min.css' ../react-frontend/assets/*.css",
+    "copy-css": "copyfiles -f '../react-frontend/assets/*.css' ../web/static-dev/css",
+    "copy-js": "copyfiles -f '../react-frontend/assets/*.js' ../web/static-dev/js",
+    "production": "npm run remove-cache:pre && npm run make-dirs && npm run build:solid && npm run build:tailwind && npm run rename-js && npm run rename-css && npm run copy-js && npm run copy-css && npm run remove-cache:post",
+    "collect": "rm -rf ../web/static && npm run production && python ../web/manage.py collectstatic -i rest_framework -i flags --no-input"
   },
   "license": "MIT",
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.1.3",
+    "@types/node": "^17.0.30",
     "autoprefixer": "^10.4.2",
+    "concurrently": "^7.1.0",
+    "copyfiles": "^2.0.0",
     "cssnano": "^5.0.15",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
+    "renamer": "^0.7.0",
     "tailwindcss": "^3.0.13",
     "typescript": "^4.5.4",
     "vite": "^2.7.10",
     "vite-plugin-solid": "^2.2.1"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "solid-app-router": "^0.2.1",
     "solid-js": "^1.3.2"
   }
