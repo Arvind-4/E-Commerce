@@ -65,10 +65,12 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+ALGOLIA_APPLICATION_ID = str(os.environ.get('ALGOLIA_APPLICATION_ID'))
+ALGOLIA_API_KEY = str(os.environ.get('ALGOLIA_API_KEY'))
 
 ALGOLIA = {
-    'APPLICATION_ID': '****',
-    'API_KEY': '****'
+    'APPLICATION_ID': ALGOLIA_APPLICATION_ID,
+    'API_KEY': ALGOLIA_API_KEY
 }
 
 INTERNAL_IPS = (
