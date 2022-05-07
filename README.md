@@ -9,6 +9,7 @@ A Simple E-commerce build on Django 4, Solid js, and TailWind! .
 - [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling.
 - [Typescript](https://www.typescriptlang.org/) - JavaScript with syntax for types.
 - [Tailwind 3](https://tailwindcss.com/) - Rapidly build modern websites without ever leaving your HTML.
+- [CockroachDB](https://www.cockroachlabs.com/) - A distributed SQL database designed for speed, scale, and survival.
 
 ### 
 
