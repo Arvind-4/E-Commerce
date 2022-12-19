@@ -1,1 +1,0 @@
-python web/manage.py runserver localhost:8000 --settings=web.backend.settings.local 

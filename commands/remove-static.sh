@@ -1,1 +1,0 @@
-rm -rf static-dev/js && rm -rf static-dev/css 
