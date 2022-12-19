@@ -31,6 +31,10 @@
         "dest": "app.py"
       },
       {
+        "src": "/admin/",
+        "dest": "app.py"
+      },
+      {
         "src": "/blog/(.*)",
         "headers": { "cache-control": "s-maxage=0" },
         "dest": "app.py"
