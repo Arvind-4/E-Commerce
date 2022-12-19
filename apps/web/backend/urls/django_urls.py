@@ -7,7 +7,7 @@ from django.urls import (
     re_path,
 )
 
-from pages.views import error_404
+from pages.views import handler404
 from checkout.views import (
     checkout_view, 
     checkout_success_view,
@@ -21,7 +21,7 @@ djangoUrls = [
     path('accounts/', include('accounts.urls')),
     re_path(r"^checkout/$", checkout_view, name='checkout'),
     re_path(r"^checkout-success/$", checkout_success_view, name='checkout-success'),
-    re_path(r"^error/$", error_404, name='404'),
+    re_path(r"^error/$", handler404, name='404'),
 ]
 
 djangoApiUrlPatterns = [
