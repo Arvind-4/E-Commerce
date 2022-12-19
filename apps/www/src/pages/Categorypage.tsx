@@ -1,4 +1,3 @@
-import { Link } from "solid-app-router";
 import type { Component } from "solid-js";
 import { For, Show } from "solid-js";
 import { createResource } from "solid-js";
@@ -32,9 +31,9 @@ const Categorypage: Component = () => {
                     /> */}
                   </div>
                   <div class="col-span-2 sm:col-span-4 xl:col-span-4">
-                    <Link href={`/category/${category.slug}/`} >
+                    <a href={`/category/${category.slug}/`} >
                       <h3 class="text-center font-semibold text-black">{category.category}</h3>
-                    </Link>
+                    </a>
                     <Show when={category.text} fallback={<div></div>}>
                       <p>
                         {category.text}

@@ -68,7 +68,7 @@ const Header: Component = () => {
                               class='p-2 flex bg-white hover:bg-gray-100 cursor-pointer border-b border-gray-100'
                               style=''
                             >
-                              <a href={`/${cp.id}/detail-view/`}>
+                              <a href={`/product/${cp.id}/`}>
                                 <div class='p-2 w-12'>
                                   <img
                                     src={cp.image_url}
@@ -76,7 +76,7 @@ const Header: Component = () => {
                                   />
                                 </div>
                               </a>
-                              <a href={`/${cp.id}/detail-view/`}>
+                              <a href={`/product/${cp.id}`}>
                                 <div class='flex-auto text-sm w-32'>
                                   <div class='font-bold'>{cp.title}</div>
                                   {/* <div class='truncate'>{cp.price}</div> */}

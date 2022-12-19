@@ -1,8 +1,6 @@
 import type { Component } from "solid-js";
 import { Switch, Match } from "solid-js";
 
-// import { a } from "solid-app-router";
-
 import { is_authenticated } from '../store/auth'
 import { logoutUser } from '../store/auth'
 

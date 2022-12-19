@@ -1,5 +1,3 @@
-import { Link } from "solid-app-router";
-
 import { ProductInterface } from "../interface/product";
 import { navigateUser } from "../store/cart";
 
@@ -29,12 +27,12 @@ const Product = ({ product }: { product: ProductInterface }) => {
             </svg>
           </button>
         </div>
-        <Link href={`/${product.id}/detail-view/`}>
+        <a href={`/product/${product.id}`}>
           <div class='px-5 py-3'>
             <h3 class='text-gray-700 uppercase'>{product.title}</h3>
             <span class='text-gray-500 mt-2'>${product.price}</span>
           </div>
-        </Link>
+        </a>
       </div>
     </>
   )

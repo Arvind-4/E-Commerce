@@ -15,7 +15,7 @@ const App: Component = () => {
       <URL />
       <Routes>
         <Route path="/category/:slug/" element={<CategoryDetailpage />} />
-        <Route path="/:id/detail-view/" element={<ProductDetailpage />} />
+        <Route path="/product/:id/" element={<ProductDetailpage />} />
       </Routes>
     </>
   )
