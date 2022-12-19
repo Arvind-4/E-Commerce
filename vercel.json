@@ -31,7 +31,7 @@
         "dest": "app.py"
       },
       {
-        "src": "/:id/detail-view/",
+        "src": "/product/:id",
         "dest": "app.py"
       },
       {
