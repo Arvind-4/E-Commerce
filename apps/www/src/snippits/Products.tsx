@@ -27,7 +27,7 @@ const Product = ({ product }: { product: ProductInterface }) => {
             </svg>
           </button>
         </div>
-        <a href={`/product/${product.id}`}>
+        <a href={`/product/${product.id}/`}>
           <div class='px-5 py-3'>
             <h3 class='text-gray-700 uppercase'>{product.title}</h3>
             <span class='text-gray-500 mt-2'>${product.price}</span>

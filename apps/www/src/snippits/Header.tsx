@@ -76,7 +76,7 @@ const Header: Component = () => {
                                   />
                                 </div>
                               </a>
-                              <a href={`/product/${cp.id}`}>
+                              <a href={`/product/${cp.id}/`}>
                                 <div class='flex-auto text-sm w-32'>
                                   <div class='font-bold'>{cp.title}</div>
                                   {/* <div class='truncate'>{cp.price}</div> */}

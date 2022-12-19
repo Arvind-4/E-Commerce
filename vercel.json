@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "trailingSlash": true,
     "builds": [
       {
         "src": "app.py",
