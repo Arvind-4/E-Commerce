@@ -1,16 +1,1 @@
-algoliasearch==2.6.1
-algoliasearch-django==2.0.0
-asgiref==3.4.1
-Django==3.2.9
-django-cockroachdb==3.2
-django-cors-headers==3.11.0
-django-countries==7.2.1
-djangorestframework==3.12.4
-gunicorn==20.1.0
-Pillow==9.0.0
-psycopg2-binary==2.9.3
-python-dotenv==0.19.2
-pytz==2021.3
-sqlparse==0.4.2
-uvicorn==0.17.6
-whitenoise==5.3.0
+-r ./requirements/production.txt
