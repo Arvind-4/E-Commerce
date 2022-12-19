@@ -1,0 +1,44 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.py",
+        "use": "@vercel/python",
+        "config": {
+          "runtime": "python3.9"
+        }
+      },
+      {
+        "src": "build.sh",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "staticfiles_build"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "headers": { "cache-control": "s-maxage=31536000, immutable" },
+        "dest": "/static/$1"
+      },
+      {
+        "src": "/",
+        "dest": "app.py"
+      },
+      {
+        "src": "/products/",
+        "dest": "app.py"
+      },
+      {
+        "src": "/blog/(.*)",
+        "headers": { "cache-control": "s-maxage=0" },
+        "dest": "app.py"
+      },
+      { 
+        "src": "/(.*)", 
+        "status": 404, 
+        "dest": "app.py" 
+      }
+    ]
+  }
