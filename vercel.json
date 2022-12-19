@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "trailingSlash": true,
     "builds": [
       {
         "src": "app.py",
@@ -31,7 +32,7 @@
         "dest": "app.py"
       },
       {
-        "src": "/product/:id",
+        "src": "/product/:id/",
         "dest": "app.py"
       },
       {
