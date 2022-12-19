@@ -1,0 +1,33 @@
+{
+  "name": "e-commerce-frontend",
+  "version": "1.0.0",
+  "description": "A Simple E-commerce build on Django 4, Solid js, and TailWind! .",
+  "main": "apps/www/src/main.tsx",
+  "directories": {},
+  "scripts": {
+    "dev": "npm run dev --prefix=apps/www",
+    "i": "npm install --prefix=apps/www",
+    "production": "npm run production --prefix=apps/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arvind-4/E-Commerce.git"
+  },
+  "keywords": [
+    "django",
+    "tailwind",
+    "solidjs",
+    "ecommerce",
+    "django4",
+    "django4.0",
+    "Solid-app-router",
+    "solid-tailwind"
+  ],
+  "author": "Arvind",
+  "displayName": "E-Commerce",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Arvind-4/E-Commerce/issues"
+  },
+  "homepage": "https://github.com/Arvind-4/E-Commerce#readme"
+}
