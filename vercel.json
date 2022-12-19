@@ -31,6 +31,10 @@
         "dest": "app.py"
       },
       {
+        "src": "/:id/detail-view/",
+        "dest": "app.py"
+      },
+      {
         "src": "/admin/",
         "dest": "app.py"
       },
