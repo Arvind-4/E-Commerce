@@ -11,25 +11,33 @@ A Simple E-commerce build on Django 4, Solid js, and TailWind! .
 - [Tailwind 3](https://tailwindcss.com/) - Rapidly build modern websites without ever leaving your HTML.
 - [CockroachDB](https://www.cockroachlabs.com/) - A distributed SQL database designed for speed, scale, and survival.
 
-### 
-
-NOTE: Still Under Progress ...
 
 ## Project structure
 
 ```
 $PROJECT_ROOT
 │  
-├── web  # Django file
+├── apps/web  # Django Backend
 │  
-├── frontend  # Solid js App
+├── apps/www  # Solid js App
 │   
-├── web/templates # Django Templates
+├── apps/templates # Django Templates
 │   
-├── web/ accounts, carts, category, products, pages 
-|	# Django Apps
+├── apps/web/apps/ accounts, carts, category, products, pages # Django Apps
 │   
-├── commands # shell commands.
+├── requirements # Python Requirements
+│
+├── testing # Jupyter Notebook for Testing
+│
+├── data/products.json # Sample Data
+│
+├── app.py # Entry Point for Django Backend
+│
+├── vercel.json # Vercel Config file
+│
+├── manage.py # Run Django Commands
+│
+├── package.json # npm commands.
 ```
 ---
 
@@ -44,28 +52,29 @@ git clone https://github.com/Arvind-4/E-Commerce-.git .
 ```
 - Create Virtual Environment for Python
 
-```
+```sh
 pip install virtualenv
 python -m venv .
 ```
 
 - Activate Virtual Environment
 
-```
+```sh
 source Scripts/activate
 ```
+**Window Users use: `.\Scripts\activate`**
 
 - Install Dependencies
 
-```
+```sh
 pip install -r requirements.txt
 ```
 
 - Make Migrations
 
-```
-python web/manage.py makemigrations
-python web/manage.py migrate
+```sh
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 ####  For Frontend
@@ -73,28 +82,25 @@ python web/manage.py migrate
 - Install Dependencies
 
 ```
-yarn install
+npm run i
 ```
-- Install CSS for Django 
+
+- Run Dev Server
 
 ```
-cd static-dev/css-dev
-yarn install
+npm run dev
 ```
+
 - Now for Bundling Your Frontend + Django static
 
 ```
-commands/bundle-frontend.sh 
+npm run production
 ```
 
-**Run this Command in Your Root of the Project!**
-
-- Now Run The Server
+**Run Both Django and Vite Server for Hot Reload in Your Project Root**
 
 Open [localhost:8000](http://localhost:8000/) in Your Browser.
-```
-commands/run.sh 
-```
+
 <br/>
 
 > **_NOTE:_**     Add Products by Navigating  Admin Page. <br/>
