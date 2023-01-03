@@ -39,7 +39,7 @@
         "dest": "app.py"
       },
       {
-        "src": "/blog/(.*)",
+        "src": "/api/(.*)",
         "headers": { "cache-control": "s-maxage=0" },
         "dest": "app.py"
       },
